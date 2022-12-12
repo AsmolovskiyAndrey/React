@@ -1,20 +1,17 @@
-import Painting from "./Painting";
 import paintings from "./paintings.json";
+import PaintingList from "./PaintingList";
+import Section from "./Section";
 
-const painting = paintings[0];
-
-function AppRepeta() {
+export default function AppRepeta() {
   return (
     <div>
-      <Painting
-        ImageUrl={painting.url}
-        title={painting.title}
-        author={painting.author.tag}
-        profileUrl={painting.author.url}
-        price={painting.price}
-      />
+      <Section title="Top Weak">
+        <PaintingList items={paintings} />
+      </Section>
+
+      <Section title="The Best">
+        <PaintingList items={paintings} />
+      </Section>
     </div>
   );
 }
-
-export default AppRepeta;
